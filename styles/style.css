@@ -1,0 +1,471 @@
+html{
+  height: 100%;
+}
+
+body {
+  font-family: 'Reenie Beanie', cursive;
+  color: #443F41;
+  line-height: 1.8;
+  height: 100%;
+  position: relative;
+}
+
+
+.reenie-beanie-regular {
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page-wrapper {
+  position: relative;
+  min-height: 100vh; /* makes sure wrapper is at least full height */
+}
+
+
+.container {
+  /* White base behind all other layers */
+  background-color: white;
+
+  /* Layered paper effects */
+  background-image:
+    /* layer 3: blue lines */
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 27px,
+      #aad7f6 28px
+    ),
+    /* layer 2: red vertical margin */
+    linear-gradient(to right, transparent 99px, #ff6a6a 100px, transparent 101px),
+    /* layer 1: white margin mask to cover lines behind left margin */
+    linear-gradient(to right, #ffffff 0px, #ffffff 100px, transparent 100px);
+
+  background-repeat: repeat;
+  background-size: 100% auto;
+  background-position: top left;
+  background-attachment: scroll;
+
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 60px 40px 80px 120px;
+  position: relative;
+  z-index: 1;
+
+  /* Paper-like styling */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+p{
+  font-size: 2rem;
+}
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust based on font size */
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.reduce-bottom-margin-20{
+  margin-bottom: -20px;
+}
+
+.reduce-bottom-margin-50{
+  margin-bottom: -50px;
+}
+
+.highlighted-text{
+  display: inline-block;
+  background: url('../images/celinechang.png') no-repeat center;
+  background-size: contain;
+  padding: 0.2em 0.4em;
+  line-height: 1.2;
+}
+
+.highlighted-text-sf{
+  display: inline-block;
+  background: url('../images/sf.png') no-repeat center;
+  background-size: contain;
+  padding: 0.2em 0.4em;
+  line-height: 1.2;
+}
+
+.highlighted-text-venmo{
+  display: inline-block;
+  background: url('../images/venmo.png') no-repeat center;
+  background-size: contain;
+  padding: 0.2em 0.4em;
+  line-height: 1.2;
+}
+
+
+.increase-bottom-margin-100{
+  margin-bottom: 60px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+
+.navbar{
+  position: absolute;
+  left: 30px;
+  z-index:10;
+  top: -20px;
+}
+
+.post-it {
+  width: 100%;
+}
+
+.post-it-frame{
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  top: 10px;
+  right: 10%;
+}
+
+.pencil {
+  position: absolute;
+  transform: rotate(45deg);
+  top: 300px;
+  z-index: 10;
+  width: 600px;
+  top: 250px;
+  right: 10%;
+}
+
+
+.paper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -100;
+}
+
+.eraser {
+  position: absolute;
+  left: 40px;
+  width: 150px;
+  bottom: 500px;
+}
+
+.smudge {
+  position: absolute;
+  bottom: 0px;
+  right: -400px;
+  width: 500px;
+}
+
+.smudge-protectedpage {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 500px;
+}
+
+
+.paper-pile-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10; /* behind everything */
+  overflow: hidden;
+}
+
+.paper-sheet {
+  position: absolute;
+  width: 700px;
+  height: 900px;
+  background:
+    linear-gradient(to right, transparent 99px, #ff6a6a 100px, transparent 101px),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 27px,
+      #aad7f6 28px
+    );
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+/* Add slight rotation and position offset per sheet */
+
+.paper-sheet:nth-child(1) {
+  top: 4%;
+  left: 3%;
+  transform: rotate(-17deg);
+}
+
+.paper-sheet:nth-child(2) {
+  top: 12%;
+  left: 20%;
+  transform: rotate(10deg);
+}
+
+.paper-sheet:nth-child(3) {
+  top: 18%;
+  left: 40%;
+  transform: rotate(-5deg);
+}
+
+.paper-sheet:nth-child(4) {
+  top: 7%;
+  left: 65%;
+  transform: rotate(13deg);
+}
+
+.paper-sheet:nth-child(5) {
+  top: 25%;
+  left: 80%;
+  transform: rotate(-11deg);
+}
+
+.paper-sheet:nth-child(6) {
+  top: 45%;
+  left: 6%;
+  transform: rotate(14deg);
+}
+
+.paper-sheet:nth-child(7) {
+  top: 38%;
+  left: 25%;
+  transform: rotate(-20deg);
+}
+
+.paper-sheet:nth-child(8) {
+  top: 52%;
+  left: 50%;
+  transform: rotate(7deg);
+}
+
+.paper-sheet:nth-child(9) {
+  top: 60%;
+  left: 72%;
+  transform: rotate(-15deg);
+}
+
+.paper-sheet:nth-child(10) {
+  top: 70%;
+  left: 35%;
+  transform: rotate(18deg);
+}
+
+
+
+
+
+
+
+/* protected page stuff */
+
+input{
+  margin-top: 20px;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  height: 30px;
+  width: 200px;
+}
+
+.submit-button{
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
+  border-style: none;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 1.8rem;
+  color: white;
+  background-color: black;
+}
+  
+
+.error{
+  margin-top: 0;
+  color: red;
+  font-size: 1.5rem;
+}
+
+
+/* set initial state of elements with this class*/
+.fade-in{
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* final state after the animation*/
+.fade-in.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* responsive design */
+
+
+@media (max-width: 1439px) {
+  .pencil {
+    width: 600px;
+    top: 250px;
+  }
+
+  .eraser {
+    width: 150px;
+    bottom: 500px;
+  }
+
+  .post-it-frame {
+    width: 280px;
+    top: 10px;
+    right: 5px;
+  }
+
+  .navbar{
+    left: 25px;
+  }
+
+  .navbar p{
+    font-size: 1.8rem;
+  }
+}
+
+
+@media (max-width: 1235px) {
+  .pencil {
+    width: 400px;
+    top: 250px;
+  }
+
+  .eraser {
+    width: 120px;
+    bottom: 500px;
+  }
+
+  .post-it-frame {
+    width: 200px;
+    top: 10px;
+    right: 5px;
+  }
+
+  .navbar{
+    left: 20px;
+  }
+
+  .navbar p{
+    font-size: 1.3rem;
+  }
+ 
+}
+
+
+
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding: 40px 30px 60px 80px;
+    max-width: 90%;
+  }
+
+  .navbar{
+    left: 20px;
+  }
+
+  .pencil,
+  .eraser {
+    display: none;
+  }
+
+  .reduce-bottom-margin-50{
+    margin-bottom: -40px;
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 30px 20px;
+    max-width: 95%;
+  }  
+
+  .post-it-frame{
+    width: 150px;
+  }
+
+  .navbar{
+    left: 15px;
+  }
+
+  .navbar p{
+    font-size: 1.2rem;
+  }
+
+  .paper-pile-background {
+    display: none;
+  }
+}

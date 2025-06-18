@@ -1,0 +1,435 @@
+html{
+  scroll-behavior: smooth; 
+}
+
+body{
+  margin:0;
+  font-family: 'Open sans', sans-serif;
+  font-size: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 20px;
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:100;
+  background-color: white;
+}
+
+
+.header-content{
+  margin-right: 20px;
+  font-family: 'Reenie Beanie', sans-serif;
+  font-size: 20px;
+  color: #2D2D2D;
+  text-decoration: none;
+}
+
+.header-content:hover{
+  color: #FF046D;
+}
+
+.spacer {
+  height: 100px; /* Equal to the height of the fixed header plus any desired gap */
+}
+
+p{
+  font-size: 2rem;
+  font-family: 'Reenie Beanie';
+}
+
+
+a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* adjust based on font size */
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+
+.navbar{
+  position: absolute;
+  left: 20px;
+  z-index:10;
+  color:#443F41;
+}
+
+.navbar p{
+  font-size: 1.2rem;
+}
+
+.post-it {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.post-it-frame{
+  position: fixed;
+  top: 10px;
+  right: 0px;
+  width: 200px;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.post-it-frame .navbar {
+  transition: all 0.3s ease;
+  transform-origin: top right;
+}
+
+.post-it-frame.shrink .post-it {
+  width: 80%;
+}
+
+.post-it-frame.shrink {
+  width: 100px;
+  opacity: 0.8;
+}
+
+.post-it-frame.shrink .navbar {
+  transform: scale(0.6);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.post-it-frame.shrink:hover {
+  width: 250px;
+  opacity: 1;
+  right: -50px;
+}
+
+.post-it-frame.shrink:hover .navbar {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* set initial state of elements with this class*/
+.fade-in{
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* final state after the animation*/
+.fade-in.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+
+
+
+
+.imply-logo{
+  width: 150px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.page-title{
+  font-family: 'Reenie Beanie', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.page-desc{
+  text-align: center;
+}
+
+.imply-landing-image{
+  width: 100%;
+  margin-top: 20px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+.section-project-desc-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 30px;
+  margin-bottom: 60px;
+}
+
+.section-project-desc{
+  display:flex;
+  column-gap: 10px;
+}
+
+
+.section-project-desc-title{
+  font-family: 'Reenie Beanie', sans-serif;
+  font-size: 40px;
+  line-height:30px;
+
+}
+
+
+.section-container{
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  column-gap: 30px;
+  margin-bottom: 60px;
+}
+
+
+.section-title{
+  font-family: 'Reenie Beanie', sans-serif;
+  font-size: 40px;
+  line-height:10px;
+  position: sticky; /* Makes the element sticky */
+  top: 100px; /* The distance from the top of the viewport */
+  align-self: start; /* Ensures proper alignment in grid layout */
+ 
+}
+
+
+.section-content-desc{
+  margin-bottom: 60px;
+}
+
+.section-content-desc-center{
+  text-align:center;
+  margin-bottom: 20px;
+}
+
+.section-content button{
+  font-family: 'Reenie Beanie', sans-serif;
+  margin-top: 20px;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-style: none;
+  border-radius: 8px;
+  background-color: #0D7DE0;
+  color: white;
+}
+
+.section-content button:hover{
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin: 80px 0; /* Optional spacing */
+}
+
+.research-image1{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.research-image3{
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.ideation-image{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.ideation-image2-container{
+  display: flex;
+  column-gap: 20px;
+  margin-bottom: 80px;
+}
+
+.ideation-image2-div{
+  flex:1;
+}
+  
+.ideation-image2a{
+  width: 100%;}
+
+.ideation-image2b{
+  width: 100%;
+}
+
+
+
+.final-design-container{
+  margin-bottom: 160px;
+  margin-top: 80px;
+}
+
+.final-design-desc{
+  text-align: center;
+  margin-bottom: 50px;
+  width: 80%;
+  justify-self: center;;
+}
+
+.final-design-gif13{
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-design-image2{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-design-image6{
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+
+.other-projects-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.other-projects-row{
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.other-project{
+  font-family: 'Reenie Beanie', sans-serif;
+  font-size: 24px;
+  color:#2D2D2D;
+  text-decoration: none;
+}
+
+.other-project:hover{
+  cursor:pointer;
+}
+
+
+.copyright{
+  text-align: center;
+  font-family: 'Borel';
+  font-size:14px;
+  margin: 20px 0;
+}
+
+
+
+
+
+
+/* breakpoints */
+@media (max-width: 1200px) {
+  .section-project-desc-container{
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 60px;
+  }
+  
+  .section-project-desc{
+      margin-bottom: 40px;
+  }
+
+  .section-container{
+      grid-template-columns: 1fr; /* Single column layout */
+      row-gap: 20px;
+      margin-bottom: 120px;
+  }
+
+  .section-title{
+      font-family: 'Reenie Beanie', sans-serif;
+      font-size: 40px;
+      line-height:10px;
+      position: relative; /* Makes the element sticky */
+      top: 0;
+      margin-bottom: 10px;
+  }
+
+  .final-design-container{
+      grid-template-columns: 1fr;
+  }
+
+  .final-design-desc{
+      justify-self: center;
+      width: 100%;
+      text-align: center; 
+      margin-bottom: 40px;
+  }
+
+  .final-design-image{
+      justify-self: center;
+      width: 40%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .ideation-image2-container{
+      display: block;
+  }
+  .ideation-image2a, .ideation-image2b{
+      width: 50%;
+      display:block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .healthapp-landing-image{
+      width: 100%;
+  }
+
+  .section-project-desc-container{
+      grid-template-columns: 1fr;
+      margin-bottom: 60px;
+  }
+}
